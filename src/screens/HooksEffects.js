@@ -31,14 +31,29 @@ export default function HooksEffects() {
 
   return (
     <View>
+      <Text style={{color: 'brown', textAlign: 'center', fontSize: 20, fontWeight: 600,}}>10 User Data Show</Text>
       <FlatList 
       data={myuserDeta}
       renderItem={( {item} ) => {
         return(
-            <View>
-                <Text>{item.name}</Text>
-                <Text>{item.email}</Text>
+          <View>
+            <View style={styles.card}>
+              <View style={styles.tittles}>
+                <Text>
+                  <Text style={styles.bolderLinText}>Name: </Text>{item.name}
+                </Text>
+                <Text>
+                  <Text style={styles.bolderLinText}>Email: </Text>{item.email}
+                </Text>
+              </View>
+              <View>
+                <Text style={styles.addressLn}>
+                  <Text style={styles.bolderLinText}>Address: </Text>{item.address.city}
+                </Text>
+                {/* <Text>{item.email}</Text> */}
+              </View>
             </View>
+          </View>
         )
       }}
       />
@@ -46,4 +61,24 @@ export default function HooksEffects() {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  card:{
+    backgroundColor: 'skyblue',
+    borderRadius: 6,
+    // bouder: 1 "solid 'green' ",
+    display: 'flex',
+    flexDirection: 1,
+    marginTop: 20,
+    padding: 20,
+    justifyContainer: 'center',
+    fontSize: 10,
+  },
+  addressLn:{
+    color: 'green',
+  },
+  bolderLinText:{
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 18,
+  }
+})
