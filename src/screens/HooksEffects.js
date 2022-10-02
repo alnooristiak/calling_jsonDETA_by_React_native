@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native'
+import { StyleSheet, Text, View, FlatList, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
 export default function HooksEffects() {
@@ -33,37 +33,44 @@ export default function HooksEffects() {
 
 
   return (
-    <View>
-      <Text style={styles.mainText}>10 User Data Show</Text>
-      {/* using FlatList to data maping and dynamic data randaring  */}
-      <FlatList
-        // to get data={name} its very importent for get and load data.
-        data={myuserDeta}
-        // Keys Extractor adding to solv unke key error 
-        keyExtractor={(key) => key}
-        renderItem={({ item }) => {
-          return (
-            <View>
-              <View style={styles.card}>
-                <View style={styles.tittles}>
-                  <Text>
-                    <Text style={styles.bolderLinText}>Name: </Text>{item.name}
-                  </Text>
-                  <Text>
-                    <Text style={styles.bolderLinText}>Email: </Text>{item.email}
-                  </Text>
-                </View>
-                <View>
-                  <Text style={styles.addressLn}>
-                    <Text style={styles.bolderLinText}>Address: </Text>{item.address.city}
-                  </Text>
-                  {/* <Text>{item.email}</Text> */}
-                </View>
-              </View>
-            </View>
-          )
-        }}
-      />
+    <View> 
+      {isLoding ?
+        (<View> <ActivityIndicator /> </View>)
+        : (
+          <View>
+            <Text style={styles.mainText}>10 User Data Show</Text>
+            {/* using FlatList to data maping and dynamic data randaring  */}
+            <FlatList
+              // to get data={name} its very importent for get and load data.
+              data={myuserDeta}
+              // Keys Extractor adding to solv unke key error 
+              // keyExtractor={(key) => key}
+              renderItem={({ item }) => {
+                return (
+                  <View>
+                    <View style={styles.card}>
+                      <View style={styles.tittles}>
+                        <Text>
+                          <Text style={styles.bolderLinText}>Name: </Text>{item.name}
+                        </Text>
+                        <Text>
+                          <Text style={styles.bolderLinText}>Email: </Text>{item.email}
+                        </Text>
+                      </View>
+                      <View>
+                        <Text style={styles.addressLn}>
+                          <Text style={styles.bolderLinText}>Address: </Text>{item.address.city}
+                        </Text>
+                        {/* <Text>{item.email}</Text> */}
+                      </View>
+                    </View>
+                  </View>
+                )
+              }}
+            />
+          </View>
+        )
+      }
     </View>
   )
 }
