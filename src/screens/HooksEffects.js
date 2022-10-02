@@ -34,9 +34,13 @@ export default function HooksEffects() {
 
   return (
     <View>
-      <Text style={{ color: 'brown', textAlign: 'center', fontSize: 20, fontWeight: 600, }}>10 User Data Show</Text>
+      <Text style={styles.mainText}>10 User Data Show</Text>
+      {/* using FlatList to data maping and dynamic data randaring  */}
       <FlatList
+        // to get data={name} its very importent for get and load data.
         data={myuserDeta}
+        // Keys Extractor adding to solv unke key error 
+        keyExtractor={(key) => key}
         renderItem={({ item }) => {
           return (
             <View>
@@ -64,7 +68,14 @@ export default function HooksEffects() {
   )
 }
 
+// css styles for this file
 const styles = StyleSheet.create({
+  mainText: {
+    color: 'brown',
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 600,
+  },
   card:{
     backgroundColor: 'skyblue',
     borderRadius: 6,
