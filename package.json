@@ -25,5 +25,16 @@
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": true,
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alnooristiak/calling_jsonDETA_by_React_native.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alnooristiak/calling_jsonDETA_by_React_native/issues"
+  },
+  "homepage": "https://github.com/alnooristiak/calling_jsonDETA_by_React_native#readme"
 }

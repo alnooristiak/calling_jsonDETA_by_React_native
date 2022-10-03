@@ -2,7 +2,7 @@ import { StyleSheet, Text, TextInput, View, secureTextEntry, TouchableOpacity } 
 import Checkbox from 'expo-checkbox';
 import React, { useState } from 'react'
 
-export default function LoginFrom() {
+export default function LoginFrom( {navigation} ) {
     const [userName, setUserName] = useState('');
     const [userPassword, setUserPassword] = useState('');
     // console.log(userName, userPassword);
@@ -11,6 +11,7 @@ export default function LoginFrom() {
     const submit = () => {
         if (userName === "istiak" && userPassword === "is123"){
             alert(`Welcome Back ${userName}`)
+            navigation.navigate('Home')
         }else{
             alert(`user name and password is'n currect please try again`)
         }
@@ -58,7 +59,7 @@ export default function LoginFrom() {
                 <Text
                     style={[styles.cBoxTxt, { color: agree ? '#16a085' : '#7f8c8d' }]}>Ihave Agree all trams and condation!</Text>
             </View>
-            
+
             <View>
                 <TouchableOpacity
                     style={[styles.loginBtn,
