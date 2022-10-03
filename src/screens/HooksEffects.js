@@ -51,15 +51,15 @@ export default function HooksEffects() {
                     <View style={styles.card}>
                       <View style={styles.tittles}>
                         <Text>
-                          <Text style={styles.bolderLinText}>Name:</Text>{item.name}
+                          <Text style={styles.bolderLinText}>Name: </Text>{item.name}
                         </Text>
                         <Text>
-                          <Text style={styles.bolderLinText}>Email:</Text>{item.email}
+                          <Text style={styles.bolderLinText}>Email: </Text>{item.email}
                         </Text>
                       </View>
                       <View>
                         <Text style={styles.addressLn}>
-                          <Text style={styles.bolderLinText}>Address:</Text>{item.address.city}
+                          <Text style={styles.bolderLinText}>Address: </Text>{item.address.city}
                         </Text>
                         {/* <Text>{item.email}</Text> */}
                       </View>
